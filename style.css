@@ -1,0 +1,198 @@
+:root{
+    --width: 300px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: no-repeat linear-gradient(to bottom, hsl(225, 100%, 98%) 0% ,hsl(225, 100%, 98%) 25% , hsl(0, 0%, 100%) 25% , hsl(0, 0%, 100%) 100% );
+    font-family: 'Inter', sans-serif;;
+}
+.main{
+    margin: 290px;
+    margin-top: 40px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.toggle{
+    display: flex;
+    align-items: center;
+}
+.social-grid{
+    display: grid;
+    grid-template-columns: var(--width) var(--width) var(--width) var(--width);
+    justify-content: space-between;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+.social {
+    background-color: hsl(227, 47%, 96%) ;
+    height: 220px;
+    border-radius: 7px;
+}
+.overviews{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: var(--width) var(--width) var(--width) var(--width);
+    justify-content: space-between;
+    row-gap: 30px;
+}
+.view{
+    background-color: hsl(227, 47%, 96%) ;
+    height: 120px;
+    border-radius: 5px;
+}
+.text h4 {
+    color: hsl(230, 17%, 14%);
+    font-size: 22px;
+    letter-spacing: 0.5px;
+}
+.text h5 {
+    color: hsl(228, 12%, 44%);
+    font-size: 12px;
+}
+.toggle h6{
+    margin-right: 8px;
+    color: hsl(228, 12%, 44%);
+}
+.line {
+    height: 3px;
+    border-radius: 7px 7px 0 0;
+}
+.fb .line{
+    background-color: hsl(208, 92%, 53%);
+}
+.twitter .line{
+    background-color:hsl(203, 89%, 53%);
+}
+.insta .line{
+    background: linear-gradient( to right,   hsl(37, 97%, 70%) , hsl(329, 70%, 58%));
+}
+.ytb .line{
+    background-color: hsl(348, 97%, 39%);
+}
+.social .name {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    align-items: center;
+}
+.social .name h6{
+    color:hsl(228, 12%, 44%) ;
+    margin-left: 5px;
+}
+.social h4{
+    text-align: center;
+    font-size: 50px;
+    margin-top: 18px;
+    color:hsl(230, 17%, 14%) ;
+}
+.social h5{
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 4px;
+    color:hsl(228, 12%, 44%) ;
+}
+.social .update{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+.update h6{
+    margin-left: 4px;
+}
+.fb, .twitter, .insta .update h6{
+    color: hsl(163, 72%, 41%);
+}
+.ytb h6{
+    color: hsl(356, 69%, 56%);
+}
+#today{
+    color: hsl(228, 12%, 44%);
+    font-size: 20px;
+}
+.view .text {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+.view .secondtext {
+    display: flex;
+    margin: 20px;
+    justify-content: space-between;
+}
+.view .result {
+    display: flex;
+    align-items: center;
+}
+.view .secondtext h4{
+    color:  hsl(230, 17%, 14%);
+    font-size: 28px;
+}
+.view .result h6{
+    margin-left: 4px;
+    color: hsl(356, 69%, 56%);
+}
+.view .result .green{
+    color: hsl(163, 72%, 41%);
+}
+.dark{
+    background: no-repeat linear-gradient(to bottom, hsl(232, 19%, 15%) 0% ,hsl(232, 19%, 15%) 25% , hsl(230, 17%, 14%) 25% , hsl(230, 17%, 14%) 100% );
+    transition: 0.6s;
+}
+.dark .header .text h4 , .dark #today{
+    color: hsl(0, 0%, 100%);
+}
+.dark .header .text h5 {
+    color: hsl(228, 34%, 66%);
+}
+.dark .toggle h6 {
+    color: hsl(228, 34%, 66%);
+}
+.dark .social , .dark .view {
+    background-color: hsl(228, 28%, 20%);
+}
+.dark .social .user-name  , .dark .social h5  , .dark .view h5 {
+    color: hsl(228, 34%, 66%) ;
+}
+.dark .social .number , .dark .view h4 {
+    color: white;
+}
+.mode{
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+#switch{
+    display: none;
+}
+.slider{
+    width: 36px;
+    height: 17px;
+    background: linear-gradient(to right,  hsl(210, 78%, 56%) , hsl(146, 68%, 55%));
+    border-radius: 20px;
+    transition: background 0.3s ;
+}
+.slider::after{
+    content: "";
+    position: absolute  ;
+    top: 1.5px;
+    left: 2px;
+    background: hsl(228, 28%, 20%);
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+#switch:checked ~ .slider{
+    background: hsl(228, 12%, 44%);
+}
+#switch:checked ~ .slider::after {
+    transform: translateX(18px);
+    background: hsl(0, 0%, 100%);
+}
